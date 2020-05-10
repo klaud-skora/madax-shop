@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './MainLayout.module.scss';
 
 import { Header } from '../Header/Header';
+import { Footer } from '../Footer/Footer';
 
 const Component = ({ children }) => {
 
@@ -12,6 +13,7 @@ const Component = ({ children }) => {
       <Header />
       <div className={styles.content}>
         {children}
+        <Footer />
       </div>
     </div>
   );

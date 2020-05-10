@@ -1,0 +1,17 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  height: 40px;
+  background-color: $color-main-dark;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: lighten($color-main-dark, 50%);
+  font-size: $base-size;
+  padding: 0 200px;
+
+  .icon {
+    color: $color-main-light;
+    font-size: 18px;
+  }
+}
