@@ -1,0 +1,14 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  background-color: $color-main-light;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  align-items: center;
+  padding: 0 10px;
+
+  .companyLogo {
+    color: $color-text;
+  }
+}
