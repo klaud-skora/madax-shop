@@ -1,6 +1,7 @@
 @import '../../../styles/settings.scss';
 
 .root {
+  width: 100%;
   background-color: $color-main-light;
   display: flex;
   justify-content: space-between;
