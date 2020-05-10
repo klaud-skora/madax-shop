@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import image from '../../../madaxCar.jpg';
+import { AllProducts } from '../../features/AllProducts/AllProducts';
 import styles from './Homepage.module.scss';
 
 class Component extends React.Component {
@@ -10,7 +10,7 @@ class Component extends React.Component {
       <div className={styles.root}>
         <div className={styles.welcomeBox}></div>
         <section className={styles.about}>
-          <h3>O nas</h3>
+          <h2>O nas</h2>
           <p>
           P.P.H.U. Madax - jesteśmy istniejącą od 1999 roku rodzinną firmą specjalizującą się w sprzedaży artykułów BHP: <br />
             <li>odzieży roboczej</li>
@@ -25,6 +25,7 @@ class Component extends React.Component {
           stały na najwyższym poziomie. Przynależność do BNI to niewątpliwie duży zaszczyt i potwierdzenie naszej wiarygodności.
           </p>
         </section>
+        <AllProducts />
       </div>
     );
   }

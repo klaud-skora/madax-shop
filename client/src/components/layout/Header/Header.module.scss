@@ -8,8 +8,17 @@
   height: 60px;
   align-items: center;
   padding: 0 10px;
+  box-shadow: .1px .1px 2px 2px $color-main-dark;
 
   .companyLogo {
-    color: $color-text;
+    font-family: 'Geo', sans-serif;
+    color: $color-text-bright;
+    text-shadow: .5px .6px .4px $color-main-dark;
+    border-bottom: 2px solid $color-main-dark;
+
+    &:hover {
+      font-weight: lighter;
+      color: $color-main-dark;
+    }
   }
 }

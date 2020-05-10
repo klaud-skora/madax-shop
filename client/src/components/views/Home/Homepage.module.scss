@@ -4,12 +4,12 @@
   .welcomeBox {
     background: url('../../../madaxCar.jpg') center top/cover no-repeat;
     background-attachment: fixed;
-    opacity: 80%;
+    opacity: .8;
     width: 100%;
     height: calc(100vh - 60px);
   }
   .about {
-    background-color: lighten($color-main-dark, 30%);
-    opacity: initial;
+    color: $color-main-dark;
+    padding: 15px 200px;
   }
 }
