@@ -1,12 +1,73 @@
 @import '../../../styles/settings.scss';
 
 .root {
-  padding: 50px 120px;
-  display: flex;
-  flex-wrap: wrap;
+  padding: 50px 200px;
+  background-color: #fff;
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
   .product {
-    flex: 30%;
-    width: 30%;
+    margin: 15px;
+    padding: 15px;
+    flex: 40%;
+    max-width: 40%;
+    height: 400px;
+    position: relative;
+
+    .more {
+      padding: 6px 10px;
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      max-width: 60%;
+      background-color: $color-main-light;
+      color: $color-main-dark;
+      border-radius: $radius;
+    }
+
+    &::after {
+      width: 100%;
+      height: 100%;
+      content: '';
+      position: absolute;
+      background: lighten($color-main-light, 50%);
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: all .5s;
+      border-radius: $radius;
+    }
+
+    .productName {
+      color: $color-main-dark;
+    }
+
+    &:hover::after {
+      opacity: .5;
+    }
+
+    &:hover .more {
+      display: block;
+    }
   }
+
+  .image {
+    width: 90%;
+    height: 300px;
+    margin-bottom: 15px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
 }

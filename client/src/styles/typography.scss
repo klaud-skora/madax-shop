@@ -20,6 +20,7 @@ h2 {
   font-size: 2rem;
   position: relative;
   color: $color-main-dark;
+  margin: 60px auto;
 
   &::after {
     content: '';

@@ -16,16 +16,20 @@ class Component extends React.Component {
     const { products } = this.props;
     return (
       <div className={styles.root}>
-        {products.map(product => (
-          <Link key={product.id} to={process.env.PUBLIC_URL + `/product/${product.id}`} className={styles.product} >
-            <div className={styles.image}>
-              <img src={`${process.env.PUBLIC_URL}/images/${product.image}`} alt={product.name} />
-            </div>
-            <div className={styles.productContent}>
-              <h5>{product.name}</h5>
-            </div>
-          </Link>
-        ))}
+        <h2>Nasze produkty</h2>
+        <div className={styles.wrapper}>
+          {products.map(product => (
+            <Link key={product.id} to={process.env.PUBLIC_URL + `/product/${product.id}`} className={styles.product} >
+              <span className={styles.more}>Pokaż więcej</span>
+              <div className={styles.image}>
+                <img src={`${process.env.PUBLIC_URL}/images/${product.image}`} alt={product.name} />
+              </div>
+              <div className={styles.productContent}>
+                <h5 className={styles.productName}>{product.name}</h5>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     );
   }
