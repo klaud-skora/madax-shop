@@ -4,19 +4,27 @@ import { initialState} from './initialState';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 // import reducers
-import products from './productsRedux';
+import { reducer as productsReducer } from './productsRedux';
 
 // combine reducers
 const reducers = combineReducers({
-  products,
+  products: productsReducer,
 });
 
-const store = createStore(
-  reducers,
+// add blank reducers for initial state properties without reducers
+Object.keys(initialState).forEach(item => {
+  if (typeof reducers[item] == 'undefined') {
+    reducers[item] = (statePart = null) => statePart;
+  }
+});
+
+const combinedReducers = combineReducers(reducers);
+
+export const store = createStore(
+  combinedReducers,
   initialState,
   composeWithDevTools(
     applyMiddleware(thunk)
   )
 );
 
-export default store;

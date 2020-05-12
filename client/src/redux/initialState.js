@@ -3,15 +3,15 @@ export const initialState = {
     data: [
       {
         id: 1,
-        name: 'Buty robocze urgent',
+        name: 'Buty robocze',
         price: 180,
-        image: '../images/photo1111.jpg',
+        image: '../../images/photo1111.jpg',
       },
       {
         id: 2,
-        name: 'Czapka LED czarna',
+        name: 'Czapka LED',
         price: 40,
-        image: '../images/photo1112.jpg',
+        image: '../../images/photo1112.jpg',
       },
     ],
     loading: {
