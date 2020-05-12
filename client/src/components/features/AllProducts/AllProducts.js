@@ -19,7 +19,7 @@ class Component extends React.Component {
         {products.map(product => (
           <Link key={product.id} to={process.env.PUBLIC_URL + `/product/${product.id}`} className={styles.product} >
             <div className={styles.image}>
-              <img src={product.image} alt={product.name}/>
+              <img src={`${process.env.PUBLIC_URL}/images/${product.image}`} alt={product.name} />
             </div>
             <div className={styles.productContent}>
               <h5>{product.name}</h5>
