@@ -57,6 +57,13 @@
     &:hover .more {
       display: block;
     }
+
+    .price {
+      font-weight: 300;
+      color: $color-main-light;
+      font-size: $base-size * 1.2;
+      margin: 0 15px 0 20px;
+    }
   }
 
   .image {

@@ -26,6 +26,7 @@ class Component extends React.Component {
               </div>
               <div className={styles.productContent}>
                 <h5 className={styles.productName}>{product.name}</h5>
+                <span className={styles.price}>{product.price}zł</span>
               </div>
             </Link>
           ))}

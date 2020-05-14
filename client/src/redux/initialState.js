@@ -3,7 +3,7 @@ export const initialState = {
     {
       id: 0,
       name: 'Buty robocze',
-      description: 'Buty URGENT 112 OB, materiał:  skóra, typ: kozak. Trzewik zabezpieczony metalowym podnoskiem ( podstawowa ochrona ). Cholewka wykonana ze skóry typu \"buffalo\" o grubości nie mniejszej niż 1,6 mm, wewnątrz wyściółka ocieplająca. Podeszwa zewnętrzna i wewnętrzna jest wykonana z PU/PU (dwie różne gęstości poliuretanu), podeszwa zewnętrzna jest twardsza , wewnętrzna bardziej miękka.',
+      description: 'Buty URGENT 112 OB, materiał:  skóra, typ: kozak. Trzewik zabezpieczony metalowym podnoskiem ( podstawowa ochrona ). Cholewka wykonana ze skóry typu "buffalo" o grubości nie mniejszej niż 1,6 mm, wewnątrz wyściółka ocieplająca. Podeszwa zewnętrzna i wewnętrzna jest wykonana z PU/PU (dwie różne gęstości poliuretanu), podeszwa zewnętrzna jest twardsza , wewnętrzna bardziej miękka.',
       price: 180,
       image: 'photo1111.jpg',
     },
