@@ -37,7 +37,6 @@ class Component extends React.Component {
   }
 }
 
-
 const mapStateToProps = (state, props) => ({
   product: getProductById(state, props.match.params.id),
 });

@@ -21,7 +21,7 @@ Object.keys(initialState).forEach(item => {
 const combinedReducers = combineReducers(reducers);
 
 export const store = createStore(
-  combinedReducers,
+  reducers,
   initialState,
   composeWithDevTools(
     applyMiddleware(thunk)

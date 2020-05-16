@@ -11,6 +11,7 @@ const mockData = {
       image: 'imagePath',
     },
   ],
+  loadProducts: () => console.log('func'),
 };
 
 describe('Component Header', () => {

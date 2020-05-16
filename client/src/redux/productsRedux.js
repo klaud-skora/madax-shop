@@ -1,43 +1,42 @@
-// import Axios from 'axios';
-// import { API_URL } from '../config';
+import Axios from 'axios';
+import { API_URL } from '../config';
 
 /* selectors */
-export const getAll = ({ products }) => products;
+export const getAll = ({ products }) => products.data;
 export const getProductById = ({ products }, id) => {
-  const filteredProducts = products.filter(product => product.id == id);
+  const filteredProducts = products.data.filter(product => product._id === id);
   return filteredProducts.length ? filteredProducts[0] : {error: true};
 };
 
 /* action name creator */
-const reducerName = 'posts';
+const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
 
 /* action types */
 const FETCH_START = createActionName('FETCH_START');
 const FETCH_SUCCESS = createActionName('FETCH_SUCCESS');
 const FETCH_ERROR = createActionName('FETCH_ERROR');
-const LOAD_PRODUCTS = createActionName('LOAD_PRODUCTS');
 
 /* action creators */
 export const fetchStarted = payload => ({ payload, type: FETCH_START });
 export const fetchSuccess = payload => ({ payload, type: FETCH_SUCCESS });
 export const fetchError = payload => ({ payload, type: FETCH_ERROR });
-export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS });
 
 /* thunk creators */
-// export const loadProductsRequest = () => {
-//   return async dispatch => {
-//     dispatch(fetchStarted);
+export const loadProductsRequest = () => {
 
-//     try {
-//       let res = await Axios.get(`${API_URL}/posts`);
-//       dispatch(fetchSuccess(res.data));
-//     }
-//     catch(err) {
-//       dispatch(fetchError(err.message || true));
-//     }
-//   };
-// };
+  return async dispatch => {
+    dispatch(fetchStarted);
+    try {
+      let res = await Axios.get(`${API_URL}/products`);
+      dispatch(fetchSuccess(res.data));
+      console.log(res.data);
+    }
+    catch(err) {
+      dispatch(fetchError(err.message || true));
+    }
+  };
+};
 
 /* REDUCER */
 export const reducer = (statePart = [], action = {}) => {

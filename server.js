@@ -3,7 +3,7 @@ const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
 
-// const productsRoutes = require('./routes/products.routes');
+const productsRoutes = require('./routes/products.routes');
 
 const app = express();
 
@@ -13,11 +13,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 /* API ENDPOINTS */
-app.use('/api', postsRoutes);
+app.use('/api', productsRoutes);
 
 /* API ERROR PAGES */
-app.use('/api', (req, res) => {
-  res.status(404).send({ post: 'Not found...' });
+app.use((req, res) => {
+  res.status(404).send({ message: 'Not found...' });
 });
 
 /* REACT WEBSITE */
@@ -27,7 +27,11 @@ app.use('*', (req, res) => {
 });
 
 /* MONGOOSE */
-mongoose.connect('mongodb://localhost:27017/madaxDB', { useNewUrlParser: true, useUnifiedTopology: true });
+// process.env === "production" 
+// ? mongoose.connect(`mongodb+srv://${process.env.GITHUB_USERNAME}:${process.env.PASSWORD}@cluster0-9fa1i.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true })
+// :
+ mongoose.connect('mongodb://localhost:27017/MadaxDB', { useNewUrlParser: true, useUnifiedTopology: true });
+
 const db = mongoose.connection;
 db.once('open', () => {
   console.log('Successfully connected to the database');
@@ -37,5 +41,5 @@ db.on('error', err => console.log('Error: ' + err));
 /* START SERVER */
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
-  console.log('Server is running on port: '+port);
+  console.log('Server is running on port: ' + port);
 });

@@ -3,14 +3,12 @@ import { shallow } from 'enzyme';
 import { ProductComponent } from './Product';
 
 const mockData = {
-  product: [
+  product:
     {
-      id: 0,
       name: 'Product',
       price: 0,
       image: 'imagePath',
     },
-  ],
 };
 
 describe('Component Product', () => {
