@@ -30,20 +30,7 @@ class Component extends React.Component {
     );
   }
 }
-
-
-// const mapStateToProps = state => ({
-//   posts: getAll(state),
-// });
-
-// const mapDispachToProps = dispatch => ({
-//   loadPosts: () => dispatch(loadPostsRequest()),
-// });
-
-// const Container = connect(mapStateToProps, mapDispachToProps)(Component);
-
 export {
   Component as Homepage,
-  // Container as Homepage,
   Component as HomepageComponent,
 };
