@@ -11,6 +11,8 @@ import { MainLayout } from './components/layout/MainLayout/MainLayout';
 // import routes
 import { Homepage } from './components/views/Home/Homepage';
 import { Product } from './components/views/Product/Product';
+import { Cart } from './components/views/Cart/Cart';
+import { Order } from './components/views/Order/Order';
 
 // store
 import { store } from './redux/store';
@@ -33,6 +35,8 @@ class App extends React.Component {
                 <Switch>
                   <Route exact path="/" component={ Homepage } />
                   <Route exact path="/product/:id" component={ Product } />
+                  <Route exact path="/cart" component={ Cart } />
+                  <Route exact path="/order" component={ Order } />
                 </Switch>
               </MainLayout>
             </ThemeProvider>

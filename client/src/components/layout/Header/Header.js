@@ -18,20 +18,6 @@ const Component = () => {
   );
 };
 
-// Component.propTypes = {
-
-// };
-
-
-// const mapStateToProps = state => ({
-//   state: state,
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
-
-
 export {
   Component as Header,
   // Container as Header,

@@ -18,8 +18,6 @@ Object.keys(initialState).forEach(item => {
   }
 });
 
-const combinedReducers = combineReducers(reducers);
-
 export const store = createStore(
   reducers,
   initialState,

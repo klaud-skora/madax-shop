@@ -6,7 +6,14 @@ export const initialState = {
       error: false,
     },
   },
-  // cart: {
-  //   products: [],
-  // },
+  cart: {
+    products: [
+      {
+        _id: 234,
+        orderer: {
+          firstName: 'Bogdan',
+        },
+      },
+    ],
+  },
 };

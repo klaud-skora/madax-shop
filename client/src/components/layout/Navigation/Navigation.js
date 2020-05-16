@@ -3,7 +3,7 @@ import React from 'react';
 
 import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 import styles from './Navigation.module.scss';
 
@@ -12,7 +12,7 @@ const Component = () => {
   return(
     <div className={styles.root}>
       <nav>
-        <Button component={NavLink} exact to={process.env.PUBLIC_URL +'/'} activeClassName='active'>Koszyk</Button>
+        <Button component={NavLink} exact to={process.env.PUBLIC_URL +'/cart'} activeClassName='active'>Koszyk <ShoppingCartIcon /></Button>
       </nav>
     </div>
   );

@@ -1,0 +1,25 @@
+@import '../../../styles/settings.scss';
+
+.root {
+
+  padding: 40px 200px;
+  min-height: calc(100vh - 100px);
+
+  .order {
+    padding: 8px 14px;
+    margin: 20px 0 10px auto;
+    max-width: 120px;
+    background-color: $color-main-dark;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+
+    &:hover {
+      background-color: lighten($color-main-dark, 10%);
+      color: $color-main-light;
+    }
+  }
+  // @media (max-width: 840px) {
+
+  // }
+}

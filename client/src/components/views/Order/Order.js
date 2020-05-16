@@ -2,7 +2,6 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 
 import styles from './Order.module.scss';
-
 // import { connect } from 'react-redux';
 // import { getProductById } from '../../../redux/cartRedux';
 
@@ -19,7 +18,7 @@ class Component extends React.Component {
 
     return (
       <div className={styles.root}>
-        <h2>Your order</h2>
+
       </div>
     );
   }
