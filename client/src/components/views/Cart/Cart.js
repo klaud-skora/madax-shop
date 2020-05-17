@@ -24,16 +24,16 @@ class Component extends React.Component {
 
   render() {
     const { productsInCart } = this.props;
-    console.log(productsInCart);
+    // console.log(productsInCart);
     return (
       <div className={styles.root}>
         <h2>Twój koszyk</h2>
         <div className={styles.cart}>
-          {/* {productsInCart.map(order => (
-            <div key={order._id} PclassName={styles.orderItem}>
+          {productsInCart.map(order => (
+            <div key={order._id} className={styles.orderItem}>
 
             </div>
-          ))} */}
+          ))}
           <Button to={process.env.PUBLIC_URL +'/'} className={styles.order}>Zamów</Button>
         </div>
       </div>

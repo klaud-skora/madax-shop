@@ -2,7 +2,7 @@ import Axios from 'axios';
 import { API_URL } from '../config';
 
 /* selectors */
-export const getCart = ({ cart }) => cart;
+export const getCart = ({ cart }) => cart.products;
 export const cartProduct = ({ cart }, id) => {
   const filteredProducts = cart.filter(product => product._id === id);
   return filteredProducts.length ? filteredProducts[0] : {error: true};

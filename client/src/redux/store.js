@@ -5,10 +5,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 // import reducers
 import { reducer as productsReducer } from './productsRedux';
+import { reducer as cartReducer } from './cartRedux';
 
 // combine reducers
 const reducers = combineReducers({
   products: productsReducer,
+  cart: cartReducer,
 });
 
 // add blank reducers for initial state properties without reducers
