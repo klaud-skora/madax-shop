@@ -3,6 +3,7 @@ show dbs
 use MadaxDB
 
 db.createCollection('products')
+db.createCollection('cart')
 
 show collections
 

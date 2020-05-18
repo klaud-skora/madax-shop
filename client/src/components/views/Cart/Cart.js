@@ -31,7 +31,7 @@ class Component extends React.Component {
         <div className={styles.cart}>
           {productsInCart.map(order => (
             <div key={order._id} className={styles.orderItem}>
-
+              <h2>{order._id}</h2>
             </div>
           ))}
           <Button to={process.env.PUBLIC_URL +'/'} className={styles.order}>Zamów</Button>
