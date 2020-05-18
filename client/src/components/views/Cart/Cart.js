@@ -1,31 +1,49 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import styles from './Cart.module.scss';
 
 import Button from '@material-ui/core/Button';
 
 import { connect } from 'react-redux';
-import { getCartProducts } from '../../../redux/cartRedux';
+import { getCartProducts, changeAmount, deleteProduct } from '../../../redux/cartRedux';
 
-// import TextField from '@material-ui/core/TextField';
+import TextField from '@material-ui/core/TextField';
 // import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 class Component extends React.Component {
   static propTypes = {
-
+    products: PropTypes.array,
+    changeAmount: PropTypes.func,
+    deleteProduct: PropTypes.func,
   };
 
   render() {
+    const { products } = this.props;
 
     return (
-      <div className={styles.root}>
-        <h2>Twój koszyk</h2>
-        <div className={styles.cart}>
-
-          <Button to={process.env.PUBLIC_URL +'/'} className={styles.order}>Zamów</Button>
+      products.length ?
+        <div className={styles.root}>
+          <h2>Twój koszyk</h2>
+          <div className={styles.cart}>
+            {products.map(product => (
+              <div key={product._id} className={styles.product}>
+                <div className={styles.productImage}>
+                  <img src={`${process.env.PUBLIC_URL}/images/${product.image}`} alt={product.name} />
+                </div>
+                <div className={styles.productContent}>
+                  <div className={styles.productBox}>
+                    <h5>{product.name}</h5>
+                    <p className={styles.price}>Cena: {product.price}zł</p>
+                  </div>
+                  <TextField label="Ilość:" type="number" InputLabelProps={{ shrink: true }} value={product.amount} className={styles.amount} onChange={ event => changeAmount(event.currentTarget.value, product._id)} />
+                </div>
+              </div>
+            ))}
+            <Button to={process.env.PUBLIC_URL +'/'} className={styles.order}>Zamów</Button>
+          </div>
         </div>
-      </div>
+        : <div className={styles.root}>Brak produktów w koszyku.</div>
     );
   }
 }
@@ -35,7 +53,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  // loadCart: () => dispatch(loadCartRequest()),
+  changeAmount: (newAmount, id) => dispatch(changeAmount(newAmount, id)),
+  deleteProduct: id => dispatch(deleteProduct(id)),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);

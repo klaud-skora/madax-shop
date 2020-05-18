@@ -30,7 +30,6 @@ export const loadProductsRequest = () => {
     try {
       let res = await Axios.get(`${API_URL}/products`);
       dispatch(fetchSuccess(res.data));
-      console.log(res.data);
     }
     catch(err) {
       dispatch(fetchError(err.message || true));

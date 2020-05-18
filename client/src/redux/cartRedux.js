@@ -11,6 +11,8 @@ const FETCH_SUCCESS = createActionName('FETCH_SUCCESS');
 const FETCH_ERROR = createActionName('FETCH_ERROR');
 
 const SET_CART = createActionName('SET_CART');
+const CHANGE_AMOUNT = createActionName('CHANGE_AMOUNT');
+const DELETE_PRODUCT = createActionName('DELETE_PRODUCT');
 
 /* action creators */
 export const fetchStarted = payload => ({ payload, type: FETCH_START });
@@ -21,6 +23,14 @@ export const setCart = (product, amount) => {
   product.amount = amount;
   product.price = product.price * amount;
   return { product, type: SET_CART };
+};
+
+export const changeAmount = (amount, id) => {
+  return { amount, id, type: CHANGE_AMOUNT };
+};
+
+export const deleteProduct = payload => {
+  return { payload, type: DELETE_PRODUCT };
 };
 
 // /* thunk creators */
@@ -42,6 +52,12 @@ export const setCart = (product, amount) => {
 export const reducer = (statePart = [], action = {}) => {
   switch (action.type) {
     case SET_CART: {
+      return {
+        ...statePart,
+        products: [...statePart.products, {...action.product}],
+      };
+    }
+    case CHANGE_AMOUNT: {
       return {
         ...statePart,
         products: [...statePart.products, {...action.product}],

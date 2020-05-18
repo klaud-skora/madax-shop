@@ -1,14 +1,28 @@
 @import '../../../styles/settings.scss';
 
 .root {
-
   padding: 40px 200px;
   min-height: calc(100vh - 100px);
+
+  .product {
+    margin: 20px 0 10px auto;
+    min-height: 100px;
+    border: 1px solid $color-main-dark;
+    background-color: lighten($color-main-light, 50%);
+    display: flex;
+    justify-content: space-between;
+
+    &:hover {
+      background-color: lighten($color-main-light, 40%);
+      color: $color-main-light;
+    }
+  }
 
   .order {
     padding: 8px 14px;
     margin: 20px 0 10px auto;
-    max-width: 120px;
+    height: 40px;
+    width: 80px;
     background-color: $color-main-dark;
     color: #fff;
     display: flex;
@@ -19,7 +33,34 @@
       color: $color-main-light;
     }
   }
-  // @media (max-width: 840px) {
 
-  // }
+  .productImage {
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    padding: 10px;
+
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .productContent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 60%;
+    max-width: 60%;
+
+    .amount {
+      width: 50px;
+      margin: 0 30px;
+    }
+  }
+  @media (max-width: 840px) {
+    padding: 40px 100px;
+  }
 }
