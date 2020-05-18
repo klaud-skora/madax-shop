@@ -21,8 +21,6 @@ class Component extends React.Component {
 
   render() {
     const { products } = this.props;
-    console.log(products);
-
     return (
       <div className={styles.root}>
         <h2>Nasze produkty</h2>
@@ -56,7 +54,6 @@ const mapDispatchToProps = dispatch => ({
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  // Component as AllProducts,
   Container as AllProducts,
   Component as AllProductsComponent,
 };

@@ -7,13 +7,6 @@ export const initialState = {
     },
   },
   cart: {
-    products: [
-      {
-        _id: 234,
-        orderer: {
-          firstName: 'Bogdan',
-        },
-      },
-    ],
+    products: [],
   },
 };

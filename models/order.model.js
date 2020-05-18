@@ -10,7 +10,9 @@ const orderSchema = new mongoose.Schema({
     phoneNumber: { type: Number, required: true },
   },
   order: {
-    _id: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'Cart' },
+    _id: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'Product' },
+    amount: { type: Number, required: true },
+    notes: { type: String },
   },
 }); 
 
