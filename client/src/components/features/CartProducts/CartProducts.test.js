@@ -5,7 +5,7 @@ import { CartProductsComponent } from './CartProducts';
 const mockData = {
   products: [
     {
-      id: 0,
+      _id: 0,
       name: 'Product',
       price: 0,
       image: 'imagePath',

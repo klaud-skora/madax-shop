@@ -7,11 +7,10 @@ import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 
 const Component = ({ children }) => {
-
   return(
     <div className={styles.root}>
       <Header />
-      <div className={styles.content}>
+      <div id="content" className={styles.content}>
         {children}
         <Footer />
       </div>

@@ -5,6 +5,7 @@ import styles from './CartProducts.module.scss';
 
 import { connect } from 'react-redux';
 import { getCartProducts, changeAmount, deleteProduct } from '../../../redux/cartRedux';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 import TextField from '@material-ui/core/TextField';
 
@@ -27,6 +28,7 @@ class Component extends React.Component {
             <div className={styles.productContent}>
               <div className={styles.productBox}>
                 <h5>{product.name}</h5>
+                <DeleteIcon />
                 <p className={styles.price}>Cena: {product.price * product.amount}zł</p>
               </div>
               <TextField label="Ilość:" type="number" InputLabelProps={{ shrink: true }} value={product.amount} className={styles.amount} onChange={ event => event.currentTarget.value > 0 ?  changeAmount(event.currentTarget.value, product._id) : null } />

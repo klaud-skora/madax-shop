@@ -17,6 +17,10 @@ class Component extends React.Component {
     addToCart: PropTypes.func,
   };
 
+  componentDidMount() {
+    const box = document.getElementById('content') != null ? document.getElementById('content') : window;
+    box.scroll(0,0);
+  }
 
   setAmount(value) {
     this.setState({ amount: value });
@@ -30,15 +34,14 @@ class Component extends React.Component {
     const { product, addToCart } = this.props;
     return (
       <div className={styles.root}>
-
         <div className={styles.productBox}>
           <div className={styles.imageBox}>
             <img src={`${process.env.PUBLIC_URL}/images/${product.image}`} alt={product.name} />
           </div>
           <div className={styles.orderBox}>
             <h2>{product.name}</h2>
-            <p className={styles.price}>{product.price}zł <span className={styles.vat}> w tym VAT</span></p>
-            <TextField label="Ilość:" type="number" InputLabelProps={{ shrink: true }} value={this.state.amount} className={styles.amount} onChange={ event => this.setAmount(event.currentTarget.value)} />
+            <p className={styles.price}>{product.price * this.state.amount}zł <span className={styles.vat}> w tym VAT</span></p>
+            <TextField label="Ilość:" type="number" InputLabelProps={{ shrink: true }} value={this.state.amount} className={styles.amount} onChange={ event => event.currentTarget.value > 0 ? this.setAmount(event.currentTarget.value) : null} />
             <Button to={process.env.PUBLIC_URL +'/'} className={styles.cart} onClick={ () => addToCart(product, this.state.amount) }>Dodaj do koszyka <ShoppingCartIcon /></Button>
           </div>
           <p>{product.description}</p>

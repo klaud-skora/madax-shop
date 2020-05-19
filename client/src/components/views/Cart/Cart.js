@@ -16,9 +16,13 @@ class Component extends React.Component {
     products: PropTypes.array,
   };
 
+  componentDidMount() {
+    const box = document.getElementById('content') != null ? document.getElementById('content') : window;
+    box.scroll(0,0);
+  }
+
   render() {
     const { products } = this.props;
-
     return (
       products.length ?
         <div className={styles.root}>
