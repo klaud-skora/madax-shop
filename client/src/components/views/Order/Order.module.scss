@@ -4,47 +4,6 @@
   padding: 40px 200px;
   min-height: calc(100vh - 100px);
 
-  .product {
-    margin: 20px 0 10px auto;
-    min-height: 100px;
-    border: 1px solid $color-main-dark;
-    background-color: lighten($color-main-light, 50%);
-    display: flex;
-    justify-content: space-between;
-
-    &:hover {
-      background-color: lighten($color-main-light, 40%);
-      color: $color-main-light;
-    }
-  }
-
-  .productImage {
-    width: 120px;
-    height: 120px;
-    background-color: #fff;
-    padding: 10px;
-
-
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
-    }
-  }
-
-  .productContent {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex: 60%;
-    max-width: 60%;
-
-    .amount {
-      width: 50px;
-      margin: 0 30px;
-    }
-  }
-
   .input {
     &::placeholder {
       color: $color-main-light;

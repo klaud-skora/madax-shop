@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 import styles from './Order.module.scss';
 import { connect } from 'react-redux';
-import { getCartProducts, changeAmount, deleteProduct, submitOrder } from '../../../redux/cartRedux';
+import { getCartProducts, submitOrder } from '../../../redux/cartRedux';
 
 import Button from '@material-ui/core/Button';
-
+import { CartProducts } from '../../features/CartProducts/CartProducts';
 import TextField from '@material-ui/core/TextField';
 // import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
@@ -15,8 +15,6 @@ class Component extends React.Component {
   static propTypes = {
     cart: PropTypes.array,
     submitOrder: PropTypes.func,
-    changeAmount: PropTypes.func,
-    deleteProduct: PropTypes.func,
   };
 
   state = {
@@ -31,26 +29,13 @@ class Component extends React.Component {
   }
 
   render() {
-    const { cart, changeAmount} = this.props;
+    const { cart } = this.props;
     return (
       cart.length ?
         <div className={styles.root}>
           <div className={styles.summary}>
             <h2>Zamówienie</h2>
-            {cart.map(product => (
-              <div key={product._id} className={styles.product}>
-                <div className={styles.productImage}>
-                  <img src={`${process.env.PUBLIC_URL}/images/${product.image}`} alt={product.name} />
-                </div>
-                <div className={styles.productContent}>
-                  <div className={styles.productBox}>
-                    <h5>{product.name}</h5>
-                    <p className={styles.price}>Cena: {product.price * product.amount}zł</p>
-                  </div>
-                  <TextField label="Ilość:" type="number" InputLabelProps={{ shrink: true }} value={product.amount} className={styles.amount} onChange={ event => event.currentTarget.value > 0 ?  changeAmount(event.currentTarget.value, product._id) : null } />
-                </div>
-              </div>
-            ))}
+            <CartProducts />
             <h2> Dane do wysyłki</h2>
             <form className={styles.form}>
               <TextField className={styles.input} label="Imię" name="firstName" type="text" fullWidth />
@@ -73,8 +58,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  changeAmount: (newAmount, id) => dispatch(changeAmount(newAmount, id)),
-  deleteProduct: id => dispatch(deleteProduct(id)),
   submitOrder: (cart, orderer) => submitOrder(cart, orderer),
 });
 

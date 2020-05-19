@@ -12,8 +12,6 @@ const mockData = {
       amount: 1,
     },
   ],
-  changeAmount: () => console.log('changeAmount'),
-  deleteProduct: () => console.log('deleteProduct'),
 };
 
 

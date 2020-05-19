@@ -14,7 +14,7 @@ const mockData = {
   loadProducts: () => console.log('func'),
 };
 
-describe('Component Header', () => {
+describe('Component AllProducts', () => {
   it('should render without crashing', () => {
     const component = shallow(<AllProductsComponent {...mockData} />);
     expect(component).toBeTruthy();
