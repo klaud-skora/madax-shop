@@ -1,3 +1,6 @@
+import Axios from 'axios';
+import { API_URL } from '../config';
+
 /* selectors */
 export const getCartProducts = ({ cart }) => cart.products;
 
@@ -13,6 +16,8 @@ const FETCH_ERROR = createActionName('FETCH_ERROR');
 const SET_CART = createActionName('SET_CART');
 const CHANGE_AMOUNT = createActionName('CHANGE_AMOUNT');
 const DELETE_PRODUCT = createActionName('DELETE_PRODUCT');
+
+const SUBMIT_ORDER = createActionName('SUBMIT_ORDER');
 
 /* action creators */
 export const fetchStarted = payload => ({ payload, type: FETCH_START });
@@ -33,20 +38,22 @@ export const deleteProduct = payload => {
   return { payload, type: DELETE_PRODUCT };
 };
 
-// /* thunk creators */
-// export const loadCartRequest = () => {
+export const submitOrder = payload => ({ payload, type: SUBMIT_ORDER });
 
-//   return async dispatch => {
-//     dispatch(fetchStarted);
-//     try {
-//       let res = await Axios.get(`${API_URL}/cart`);
-//       dispatch(fetchSuccess(res.data));
-//     }
-//     catch(err) {
-//       dispatch(fetchError(err.message || true));
-//     }
-//   };
-// };
+/* thunk creators */
+export const submitOrderRequest = () => {
+
+  return async dispatch => {
+    dispatch(fetchStarted);
+    try {
+      let res = await Axios.get(`${API_URL}/cart`);
+      dispatch(fetchSuccess(res.data));
+    }
+    catch(err) {
+      dispatch(fetchError(err.message || true));
+    }
+  };
+};
 
 /* REDUCER */
 export const reducer = (statePart = [], action = {}) => {
@@ -60,7 +67,10 @@ export const reducer = (statePart = [], action = {}) => {
     case CHANGE_AMOUNT: {
       return {
         ...statePart,
-        products: [...statePart.products, {...action.product}],
+        products: statePart.products.map(product => {
+          if( product._id === action.id) return {...product, amount: action.amount};
+          else return product;
+        }),
       };
     }
     case FETCH_START: {

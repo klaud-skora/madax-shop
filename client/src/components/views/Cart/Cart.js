@@ -19,7 +19,7 @@ class Component extends React.Component {
   };
 
   render() {
-    const { products } = this.props;
+    const { products, changeAmount } = this.props;
 
     return (
       products.length ?
@@ -34,9 +34,9 @@ class Component extends React.Component {
                 <div className={styles.productContent}>
                   <div className={styles.productBox}>
                     <h5>{product.name}</h5>
-                    <p className={styles.price}>Cena: {product.price}zł</p>
+                    <p className={styles.price}>Cena: {product.price * product.amount}zł</p>
                   </div>
-                  <TextField label="Ilość:" type="number" InputLabelProps={{ shrink: true }} value={product.amount} className={styles.amount} onChange={ event => changeAmount(event.currentTarget.value, product._id)} />
+                  <TextField label="Ilość:" type="number" InputLabelProps={{ shrink: true }} value={product.amount} className={styles.amount} onChange={ event => event.currentTarget.value > 0 ?  changeAmount(event.currentTarget.value, product._id) : null } />
                 </div>
               </div>
             ))}
