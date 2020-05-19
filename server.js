@@ -17,11 +17,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api', productsRoutes);
 app.use('/api', newOrderRoutes);
 
-/* API ERROR PAGES */
-app.use((req, res) => {
-  res.status(404).send({ message: 'Not found...' });
-});
-
 /* REACT WEBSITE */
 app.use(express.static(path.join(__dirname, '/client/build')));
 app.get('*', (req, res) => {
@@ -30,9 +25,14 @@ app.get('*', (req, res) => {
   });
 });
 
+/* API ERROR PAGES */
+app.use((req, res) => {
+  res.status(404).send({ message: 'Not found...' });
+});
+
 /* MONGOOSE */
 process.env === "production" 
-? mongoose.connect(`mongodb+srv://${process.env.GITHUB_USERNAME}:${process.env.PASS}@cluster0-9fa1i.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true })
+? mongoose.connect(`mongodb+srv://${process.env.GITHUB_USERNAME}:${process.env.PASS}@cluster0-9fa1i.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true, dbName: 'MadaxDB' })
 : mongoose.connect('mongodb://localhost:27017/MadaxDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
@@ -43,6 +43,8 @@ db.on('error', err => console.log('Error: ' + err));
 
 /* START SERVER */
 const port = process.env.PORT || 8000;
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log('Server is running on port: ' + port);
 });
+
+module.exports = server;
