@@ -24,7 +24,8 @@
     "react-scripts": "3.4.1",
     "react-test-renderer": "^16.13.1",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "redux-devtools-extension": "^2.13.8"
   },
   "scripts": {
     "start": "run-p start:* ",
@@ -62,7 +63,7 @@
   },
   "devDependencies": {
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.2",
-    "redux-devtools-extension": "^2.13.8"
+    "lint-staged": "^10.2.2"
+
   }
 }
