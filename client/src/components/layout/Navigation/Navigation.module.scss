@@ -1,5 +1,27 @@
 @import '../../../styles/settings.scss';
 
-// .root {
+.root {
+  .cart {
+    position: relative;
+  }
 
-// }
+  .cartDot {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    content: '';
+    box-shadow: .5px .9px .4px $color-main-dark;
+    background-color: #fff;
+    color: $color-main-dark;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+  }
+}
+

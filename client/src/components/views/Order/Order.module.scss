@@ -1,7 +1,10 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-//   @media (max-width: 840px) {
+.root {
+  padding: 40px 200px;
+  min-height: calc(100vh - 100px);
 
-//   }
-// }
+  @media (max-width: 840px) {
+
+  }
+}

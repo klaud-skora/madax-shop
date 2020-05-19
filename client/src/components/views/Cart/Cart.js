@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { getCartProducts, changeAmount, deleteProduct } from '../../../redux/cartRedux';
 
 import TextField from '@material-ui/core/TextField';
-// import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { Link } from 'react-router-dom';
 
 class Component extends React.Component {
   static propTypes = {
@@ -40,7 +40,9 @@ class Component extends React.Component {
                 </div>
               </div>
             ))}
-            <Button to={process.env.PUBLIC_URL +'/'} className={styles.order}>Zamów</Button>
+            <Link to={process.env.PUBLIC_URL +'/order'}>
+              <Button className={styles.order}>Zamów</Button>
+            </Link>
           </div>
         </div>
         : <div className={styles.root}>Brak produktów w koszyku.</div>
