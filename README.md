@@ -13,6 +13,8 @@ https://madax.herokuapp.com/
  * Node.js
 
  ## Easy way to install && run
+ Run mongod && add MadaxDB to your local dbs (initMOngoDB.txt),
  Use commands:
+
  * npm install
  * npm start
