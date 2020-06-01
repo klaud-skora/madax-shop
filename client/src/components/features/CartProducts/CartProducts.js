@@ -17,7 +17,7 @@ class Component extends React.Component {
   };
 
   render() {
-    const { products, changeAmount } = this.props;
+    const { products, changeAmount, deleteProduct } = this.props;
     return (
       <div className={styles.cart}>
         {products.map(product => (
@@ -27,10 +27,13 @@ class Component extends React.Component {
             </div>
             <div className={styles.productContent}>
               <div className={styles.productBox}>
-                <h5>{product.name}</h5>
-                <DeleteIcon />
+                <div className={styles.can}>
+                  <h5>{product.name}</h5>
+                  <DeleteIcon onClick={() => deleteProduct(product._id)} />
+                </div>
                 <p className={styles.price}>Cena: {product.price * product.amount}zł</p>
               </div>
+
               <TextField label="Ilość:" type="number" InputLabelProps={{ shrink: true }} value={product.amount} className={styles.amount} onChange={ event => event.currentTarget.value > 0 ?  changeAmount(event.currentTarget.value, product._id) : null } />
             </div>
           </div>

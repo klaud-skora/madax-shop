@@ -73,6 +73,12 @@ export const reducer = (statePart = [], action = {}) => {
         }),
       };
     }
+    case DELETE_PRODUCT: {
+      return {
+        ...statePart,
+        products: statePart.products.filter(product => product._id !== action.payload),
+      };
+    }
     case FETCH_START: {
       return {
         ...statePart,

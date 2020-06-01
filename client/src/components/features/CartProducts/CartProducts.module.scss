@@ -14,6 +14,13 @@
       color: $color-main-light;
     }
   }
+
+  .can {
+    display: flex;
+    align-items: center;
+    color: $color-main-dark;
+  }
+
   .productImage {
     width: 120px;
     height: 120px;
