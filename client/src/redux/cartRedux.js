@@ -18,6 +18,7 @@ const CHANGE_AMOUNT = createActionName('CHANGE_AMOUNT');
 const DELETE_PRODUCT = createActionName('DELETE_PRODUCT');
 
 const SUBMIT_ORDER = createActionName('SUBMIT_ORDER');
+const CLEAN_CART = createActionName('CLEAN_CART');
 
 /* action creators */
 export const fetchStarted = payload => ({ payload, type: FETCH_START });
@@ -39,6 +40,8 @@ export const deleteProduct = payload => {
 };
 
 export const submitOrder = payload => ({ payload, type: SUBMIT_ORDER });
+export const cleanCart = payload => {
+  return ({ payload, type: CLEAN_CART })};
 
 /* thunk creators */
 export const submitOrderRequest = () => {
@@ -77,6 +80,12 @@ export const reducer = (statePart = [], action = {}) => {
       return {
         ...statePart,
         products: statePart.products.filter(product => product._id !== action.payload),
+      };
+    }
+    case CLEAN_CART: {
+      return {
+        ...statePart,
+        products: [],
       };
     }
     case FETCH_START: {

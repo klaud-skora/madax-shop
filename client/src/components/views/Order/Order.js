@@ -3,18 +3,19 @@ import PropTypes from 'prop-types';
 
 import styles from './Order.module.scss';
 import { connect } from 'react-redux';
-import { getCartProducts, submitOrder } from '../../../redux/cartRedux';
+import { getCartProducts, submitOrder, cleanCart } from '../../../redux/cartRedux';
 
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 import { CartProducts } from '../../features/CartProducts/CartProducts';
 import TextField from '@material-ui/core/TextField';
-// import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 class Component extends React.Component {
 
   static propTypes = {
     cart: PropTypes.array,
     submitOrder: PropTypes.func,
+    cleanCart: PropTypes.func,
   };
 
   state = {
@@ -26,6 +27,12 @@ class Component extends React.Component {
       postCode: '',
       phoneNumber: '',
     },
+  }
+
+  sendOrder(){
+    const { cart, submitOrder, cleanCart } = this.props;
+    submitOrder(cart, this.state.orderer);
+    cleanCart();
   }
 
   render() {
@@ -46,7 +53,9 @@ class Component extends React.Component {
               <TextField className={styles.input} label="Numer tel" name="address" type="text" fullWidth />
             </form>
           </div>
-          <Button className={styles.orderButton}>Zamawiam</Button>
+          <Link to={process.env.PUBLIC_URL +'/order-summary'}>
+            <Button onClick={() => this.sendOrder()} className={styles.orderButton}>Zamawiam</Button>
+          </Link>
         </div>
         : <div className={styles.root}>Brak produktów w koszyku.</div>
     );
@@ -58,7 +67,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  submitOrder: (cart, orderer) => submitOrder(cart, orderer),
+  submitOrder: (cart, orderer) => dispatch(submitOrder(cart, orderer)),
+  cleanCart: () => dispatch(cleanCart()),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);

@@ -13,6 +13,7 @@ import { Homepage } from './components/views/Home/Homepage';
 import { Product } from './components/views/Product/Product';
 import { Cart } from './components/views/Cart/Cart';
 import { Order } from './components/views/Order/Order';
+import { OrderSummary } from './components/views/OrderSummary/OrderSummary';
 
 // store
 import { store } from './redux/store';
@@ -37,6 +38,7 @@ class App extends React.Component {
                   <Route exact path="/product/:id" component={ Product } />
                   <Route exact path="/cart" component={ Cart } />
                   <Route exact path="/order" component={ Order } />
+                  <Route exact path="/order-summary" component={ OrderSummary } />
                 </Switch>
               </MainLayout>
             </ThemeProvider>

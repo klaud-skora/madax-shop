@@ -33,7 +33,6 @@ class Component extends React.Component {
                 </div>
                 <p className={styles.price}>Cena: {product.price * product.amount}zł</p>
               </div>
-
               <TextField label="Ilość:" type="number" InputLabelProps={{ shrink: true }} value={product.amount} className={styles.amount} onChange={ event => event.currentTarget.value > 0 ?  changeAmount(event.currentTarget.value, product._id) : null } />
             </div>
           </div>

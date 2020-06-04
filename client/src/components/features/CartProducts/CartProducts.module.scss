@@ -15,9 +15,14 @@
     }
   }
 
+  .productBox {
+    width: 40%;
+  }
+
   .can {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     color: $color-main-dark;
   }
 
