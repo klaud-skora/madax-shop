@@ -4,9 +4,13 @@
   padding: 40px 200px;
   min-height: calc(100vh - 100px);
 
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .order {
     padding: 8px 14px;
-    margin: 20px 0 10px auto;
     height: 40px;
     width: 80px;
     background-color: $color-main-dark;

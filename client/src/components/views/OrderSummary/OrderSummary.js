@@ -22,9 +22,11 @@ class Component extends React.Component {
     return (
       <div className={styles.root}>
         <h1>Dziękujemy za zakupy w naszym sklepie!</h1>
-        <Link to={process.env.PUBLIC_URL +'/'}>
-          <Button className={styles.order}>Kliknij, aby przejść do strony głównej.</Button>
-        </Link>
+        <div className={styles.buttonContainer}>
+          <Link to={process.env.PUBLIC_URL +'/'}>
+            <Button className={styles.order}>Kliknij, aby przejść do strony głównej.</Button>
+          </Link>
+        </div>
       </div>
     );
   }

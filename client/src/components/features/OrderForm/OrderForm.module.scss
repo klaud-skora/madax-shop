@@ -1,0 +1,55 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  padding: 40px;
+  position: relative;
+
+  .alert {
+    margin: 5px;
+    color: #f7797d;
+    background-color: lighten(#f7797d, 25%);
+    border: 1px solid #f7797d;
+    border-radius: 4px;
+    position: absolute;
+    padding: 10px 16px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .input {
+    margin-bottom: 12px;
+    width: 100%;
+    border: 0;
+    padding: 12px 8px;
+    background: inherit;
+    border-bottom: 1px solid $color-main-dark;
+    outline: none;
+    color: $color-main-dark;
+
+    &::placeholder {
+      color: $color-main-light;
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .orderButton {
+    padding: 8px 14px;
+    margin: 20px 0 10px;
+    height: 40px;
+    width: 110px;
+    background-color: $color-main-dark;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+
+    &:hover {
+      background-color: lighten($color-main-dark, 10%);
+      color: $color-main-light;
+    }
+  }
+}

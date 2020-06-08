@@ -3,16 +3,15 @@
 .root {
   padding: 40px 200px;
   min-height: calc(100vh - 100px);
+  text-align: center;
 
-  .input {
-    &::placeholder {
-      color: $color-main-light;
-    }
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
   }
 
   .order {
     padding: 8px 14px;
-    margin: 40px auto 10px;
     height: 40px;
     background-color: $color-main-dark;
     color: #fff;

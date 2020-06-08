@@ -29,9 +29,11 @@ class Component extends React.Component {
           <h2>Twój koszyk</h2>
           <div className={styles.cart}>
             <CartProducts />
-            <Link to={process.env.PUBLIC_URL +'/order'}>
-              <Button className={styles.order}>Zamów</Button>
-            </Link>
+            <div className={styles.buttonContainer}>
+              <Link to={process.env.PUBLIC_URL +'/order'}>
+                <Button className={styles.order}>Zamów</Button>
+              </Link>
+            </div>
           </div>
         </div>
         : <div className={styles.root}>Brak produktów w koszyku.</div>
