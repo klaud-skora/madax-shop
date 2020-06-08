@@ -2,13 +2,25 @@ import React from 'react';
 
 import { AllProducts } from '../../features/AllProducts/AllProducts';
 import styles from './Homepage.module.scss';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 class Component extends React.Component {
+
+  scrollDown() {
+
+    const box = document.getElementById('content') != null ? document.getElementById('content') : window;
+    // box.scroll(0,0);
+    box.scroll({ top: 600, behavior: 'smooth' })
+  }
 
   render() {
     return (
       <div className={styles.root}>
-        <div className={styles.welcomeBox}></div>
+        <div className={styles.welcomeBox}>
+          <div className={styles.scrollDown} onClick={() => this.scrollDown()} >
+            <KeyboardArrowDownIcon className={styles.arrowIcon} />
+          </div>
+        </div>
         <section className={styles.about}>
           <h2>O nas</h2>
           <p>
