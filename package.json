@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "build": "cd client && npm install && npm run build",
     "test": "mocha \"./test/**/*.test.js\"",
     "test:watch": "onchange \"./**/*.js\" -i -k -- yarn run test"

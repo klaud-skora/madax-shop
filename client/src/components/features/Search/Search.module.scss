@@ -6,6 +6,7 @@
   align-items: flex-end;
   justify-content: center;
   color: $color-main-light;
+  width: 50%;
 
   .searchInput {
     margin-top: 40px;
@@ -20,4 +21,14 @@
   .searchIcon {
     cursor: pointer;
   }
+
+  @media(max-width: 740px) {
+    margin: 15px auto 30px;
+    width: 100%;
+
+    .searchInput {
+      margin-top: 0px;
+    }
+  }
+
 }

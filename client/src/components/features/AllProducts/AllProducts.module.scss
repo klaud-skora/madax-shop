@@ -1,7 +1,7 @@
 @import '../../../styles/settings.scss';
 
 .root {
-  padding: 50px 200px;
+  padding: 15px 200px;
   background-color: #fff;
 
   .wrapper {
@@ -12,13 +12,15 @@
 
   .allProdcutsHeader{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    padding: 20px 0;
 
     h2 {
-      margin-left: 30px;
+      margin: 0;
     }
+
   }
 
   .product {
@@ -89,12 +91,9 @@
     }
   }
 
-  @media(max-width:980px ) {
-    padding: 0 100px;
-  }
-
-  @media(max-width:740px ) {
-    padding: 0 20px;
+  @media (max-width: 840px) {
+    padding: 20px 50px;
   }
 
 }
+

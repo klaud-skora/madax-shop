@@ -9,7 +9,8 @@ class Component extends React.Component {
   scrollDown() {
 
     const box = document.getElementById('content') != null ? document.getElementById('content') : window;
-    box.scroll({ top: 600, behavior: 'smooth' })
+
+    box.scroll({ top: window.innerHeight * .93, behavior: 'smooth' })
   }
 
   render() {
