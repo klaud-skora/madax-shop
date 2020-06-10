@@ -20,11 +20,7 @@ class Component extends React.Component {
     this.setState({
       value: e.target.value,
     });
-    this.handleSearch();
-  }
-
-  handleSearch() {
-    this.props.changeSearchString(this.state.value);
+    this.props.changeSearchString(e.target.value)
   }
 
   render() {
