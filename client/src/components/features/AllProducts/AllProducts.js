@@ -7,6 +7,8 @@ import { getAll, loadProductsRequest } from '../../../redux/productsRedux';
 import { Link } from 'react-router-dom';
 import styles from './AllProducts.module.scss';
 
+import { Search } from '../Search/Search';
+
 class Component extends React.Component {
 
   static propTypes = {
@@ -23,7 +25,10 @@ class Component extends React.Component {
     const { products } = this.props;
     return (
       <div className={styles.root}>
-        <h2>Nasze produkty</h2>
+        <div className={styles.allProdcutsHeader}>
+          <h2>Nasze produkty</h2>
+          <Search />
+        </div>
         <div className={styles.wrapper}>
           {products.map(product => (
             <Link key={product.name} to={process.env.PUBLIC_URL + `/product/${product._id}`} className={styles.product} >

@@ -22,10 +22,10 @@
     "mongoose": "5.7.5",
     "onchange": "6.1.0",
     "socket.io": "2.2.0",
-    "uuid": "^7.0.2"
+    "uuid": "^7.0.2",
+    "nodemon": "^2.0.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2",
     "snyk": "^1.305.1"
   }
 }

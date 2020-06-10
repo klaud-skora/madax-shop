@@ -1,0 +1,19 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  padding: 0 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: $color-main-light;
+
+  .searchInput {
+    margin-top: 40px;
+    border: none;
+    border-bottom: 1px solid $color-main-light;
+    outline: none;
+    color: $color-main-dark;
+    font-weight: 600;
+    letter-spacing: .1rem;
+  }
+}
