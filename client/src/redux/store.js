@@ -6,11 +6,13 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 // import reducers
 import { reducer as productsReducer } from './productsRedux';
 import { reducer as cartReducer } from './cartRedux';
+import { reducer as searchStringReducer } from './searchStringRedux';
 
 // combine reducers
 const reducers = combineReducers({
   products: productsReducer,
   cart: cartReducer,
+  searchString: searchStringReducer,
 });
 
 // add blank reducers for initial state properties without reducers

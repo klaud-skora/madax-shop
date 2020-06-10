@@ -2,11 +2,13 @@ import React from 'react';
 
 import styles from './Search.module.scss';
 import SearchIcon from '@material-ui/icons/Search';
+import { connect } from 'react-redux';
+import { getSearchString } from '../../../redux/searchStringRedux';
 
 class Component extends React.Component {
 
   state = {
-    value: 'searchString',
+    value: this.props.searchString,
   }
 
   handleChange(e) {
@@ -29,7 +31,13 @@ class Component extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  searchString: getSearchString(state),
+});
+
+const Container = connect(mapStateToProps)(Component);
+
 export {
-  Component as Search,
+  Container as Search,
   Component as SearchComponent,
 };
