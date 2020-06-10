@@ -1,18 +1,30 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import styles from './Search.module.scss';
 import SearchIcon from '@material-ui/icons/Search';
 import { connect } from 'react-redux';
-import { getSearchString } from '../../../redux/searchStringRedux';
+import { getSearchString, createAction_changeSearchString } from '../../../redux/searchStringRedux';
 
 class Component extends React.Component {
+  static propTypes = {
+    searchString: PropTypes.string,
+    changeSearchString: PropTypes.func,
+    history: PropTypes.object,
+  }
 
   state = {
     value: this.props.searchString,
   }
 
   handleChange(e) {
-    console.log('typing')
+    this.setState({
+      value: e.target.value,
+    });
+    this.handleSearch();
+  }
+
+  handleSearch() {
+    this.props.changeSearchString(this.state.value);
   }
 
   render() {
@@ -25,7 +37,7 @@ class Component extends React.Component {
           placeholder='Szukaj'
           value={value}
           onChange={event => this.handleChange(event)}
-        /><SearchIcon />
+        /><SearchIcon className={styles.searchIcon} />
       </div>
     );
   }
@@ -35,7 +47,12 @@ const mapStateToProps = state => ({
   searchString: getSearchString(state),
 });
 
-const Container = connect(mapStateToProps)(Component);
+
+const mapDispatchToProps = dispatch => ({
+  changeSearchString: newSearchString => dispatch(createAction_changeSearchString(newSearchString)),
+});
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
   Container as Search,

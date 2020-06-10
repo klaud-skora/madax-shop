@@ -3,7 +3,6 @@ import { API_URL } from '../config';
 
 /* selectors */
 export const getAll = ({ products }) => products.data;
-export const getProducts = ({ products }, searchString) => products.filter(product => new RegExp(searchString, 'i').test(product.name));
 export const getProductById = ({ products }, id) => {
   const filteredProducts = products.data.filter(product => product._id === id);
   return filteredProducts.length ? filteredProducts[0] : {error: true};

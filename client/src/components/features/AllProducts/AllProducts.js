@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { getAll, loadProductsRequest } from '../../../redux/productsRedux';
+import { getSearchString } from '../../../redux/searchStringRedux';
 
 import { Link } from 'react-router-dom';
 import styles from './AllProducts.module.scss';
@@ -12,7 +13,7 @@ import { Search } from '../Search/Search';
 class Component extends React.Component {
 
   static propTypes = {
-    products: PropTypes.array,
+    allProducts: PropTypes.array,
     loadProducts: PropTypes.func,
   }
 
@@ -22,7 +23,8 @@ class Component extends React.Component {
   }
 
   render() {
-    const { products } = this.props;
+    const { allProducts, searchString } = this.props;
+    const productsToDisplay = searchString === '' ? allProducts : allProducts.filter(product => new RegExp(searchString, 'i').test(product.name));
     return (
       <div className={styles.root}>
         <div className={styles.allProdcutsHeader}>
@@ -30,7 +32,7 @@ class Component extends React.Component {
           <Search />
         </div>
         <div className={styles.wrapper}>
-          {products.map(product => (
+          {productsToDisplay.map(product => (
             <Link key={product.name} to={process.env.PUBLIC_URL + `/product/${product._id}`} className={styles.product} >
               <span className={styles.more}>Pokaż więcej</span>
               <div className={styles.image}>
@@ -49,7 +51,8 @@ class Component extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  products: getAll(state),
+  searchString: getSearchString(state),
+  allProducts: getAll(state),
 });
 
 const mapDispatchToProps = dispatch => ({
