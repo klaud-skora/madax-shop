@@ -5,8 +5,8 @@ import styles from './OrderForm.module.scss';
 import Button from '@material-ui/core/Button';
 
 import { connect } from 'react-redux';
-import { getAll } from '../../../redux/productsRedux';
-import { submitOrder, cleanCart } from '../../../redux/cartRedux';
+import { getAll } from '../../../selectors';
+import { submitOrder, cleanCart } from '../../../actions/cartActions';
 
 class Component extends React.Component {
 
@@ -36,7 +36,7 @@ class Component extends React.Component {
 
     console.log(value, name);
     this.setState({ orderer: {...orderer, [name]: value}, error: null });
-    }
+  }
 
   sendOrder(e){
     e.preventDefault();
@@ -75,8 +75,8 @@ class Component extends React.Component {
       <div className={styles.root}>
         <form className={styles.form} noValidate>
           {this.state.error != null
-          ? <div className={styles.alert}>{this.state.error}</div>
-          : null}
+            ? <div className={styles.alert}>{this.state.error}</div>
+            : null}
           <input className={styles.input} onChange={(e) => this.updateInput(e)} placeholder="Imię" value={firstName} name="firstName" type="text" required />
           <input className={styles.input} onChange={(e) => this.updateInput(e)} placeholder="Nazwisko" value={lastName} name="lastName" type="text" required />
           <input className={styles.input} onChange={(e) => this.updateInput(e)} placeholder="Email" value={email} name="email" type="email" required />

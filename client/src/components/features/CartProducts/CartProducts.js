@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import styles from './CartProducts.module.scss';
 
 import { connect } from 'react-redux';
-import { getCartProducts, changeAmount, deleteProduct } from '../../../redux/cartRedux';
+import { getCartProducts } from '../../../selectors';
+import { changeAmount, deleteProduct } from '../../../actions/cartActions';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 import TextField from '@material-ui/core/TextField';

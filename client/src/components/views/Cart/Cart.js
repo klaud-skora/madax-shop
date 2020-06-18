@@ -6,7 +6,7 @@ import styles from './Cart.module.scss';
 import Button from '@material-ui/core/Button';
 
 import { connect } from 'react-redux';
-import { getCartProducts } from '../../../redux/cartRedux';
+import { getCartProducts } from '../../../selectors';
 
 import { CartProducts } from '../../features/CartProducts/CartProducts';
 import { Link } from 'react-router-dom';

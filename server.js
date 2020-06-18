@@ -31,10 +31,9 @@ app.use((req, res) => {
 });
 
 /* MONGOOSE */
-// process.env === 'production'
-// ? 
-mongoose.connect(`mongodb+srv://${process.env.GITHUB_USERNAME}:${process.env.PASSWORD}@cluster0-9fa1i.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true, dbName: 'MadaxDB' })
-// : mongoose.connect('mongodb://localhost:27017/MadaxDB', { useNewUrlParser: true, useUnifiedTopology: true, dbName: 'MadaxDB' });
+process.env === 'production'
+? mongoose.connect(`mongodb+srv://${process.env.GITHUB_USERNAME}:${process.env.PASSWORD}@cluster0-9fa1i.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true, dbName: 'MadaxDB' })
+: mongoose.connect('mongodb://localhost:27017/MadaxDB', { useNewUrlParser: true, useUnifiedTopology: true, dbName: 'MadaxDB' });
 
 const db = mongoose.connection;
 db.once('open', () => {

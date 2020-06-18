@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { getAll, loadProductsRequest } from '../../../redux/productsRedux';
-import { getSearchString } from '../../../redux/searchStringRedux';
+import { getAll } from '../../../selectors';
+import { loadProductsRequest } from '../../../actions/productsActions';
+import { getSearchString } from '../../../selectors';
 
 import { Link } from 'react-router-dom';
 import styles from './AllProducts.module.scss';
@@ -15,6 +16,7 @@ class Component extends React.Component {
   static propTypes = {
     allProducts: PropTypes.array,
     loadProducts: PropTypes.func,
+    searchString: PropTypes.string,
   }
 
   componentDidMount() {

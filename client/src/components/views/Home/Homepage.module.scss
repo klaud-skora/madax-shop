@@ -1,9 +1,9 @@
-@import '../../../styles/settings.scss';
+@import '../../../assets/styles/settings.scss';
 
 .root {
 
   .welcomeBox {
-    background: url('../../../madaxCar.jpeg') center top/cover no-repeat;
+    background: url('../../../assets/images/madaxCar.jpeg') center top/cover no-repeat;
     background-attachment: fixed;
     opacity: .8;
     width: 100%;

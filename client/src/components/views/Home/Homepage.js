@@ -10,7 +10,7 @@ class Component extends React.Component {
 
     const box = document.getElementById('content') != null ? document.getElementById('content') : window;
 
-    box.scroll({ top: window.innerHeight * .93, behavior: 'smooth' })
+    box.scroll({ top: window.innerHeight * .93, behavior: 'smooth' });
   }
 
   render() {

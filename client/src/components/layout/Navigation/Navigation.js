@@ -7,7 +7,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 import styles from './Navigation.module.scss';
 import { connect } from 'react-redux';
-import { getCartProducts } from '../../../redux/cartRedux';
+import { getCartProducts } from '../../../selectors';
 
 class Component extends React.Component {
   static propTypes = {

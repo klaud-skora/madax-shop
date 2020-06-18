@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 
 import styles from './Footer.module.scss';
 
@@ -16,24 +15,10 @@ const Component = () => {
       </a>
     </div>
   );
+
 };
-
-// Component.propTypes = {
-
-// };
-
-
-// const mapStateToProps = state => ({
-//   state: state,
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
-
 
 export {
   Component as Footer,
-  // Container as Footer,
   Component as FooterComponent,
 };

@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import styles from './Search.module.scss';
 import SearchIcon from '@material-ui/icons/Search';
 import { connect } from 'react-redux';
-import { getSearchString, createAction_changeSearchString } from '../../../redux/searchStringRedux';
+import { getSearchString } from '../../../selectors';
+import { createAction_changeSearchString } from '../../../actions/searchStringActions';
 
 class Component extends React.Component {
   static propTypes = {
@@ -20,7 +21,7 @@ class Component extends React.Component {
     this.setState({
       value: e.target.value,
     });
-    this.props.changeSearchString(e.target.value)
+    this.props.changeSearchString(e.target.value);
   }
 
   render() {

@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import styles from './Product.module.scss';
 
 import { connect } from 'react-redux';
-import { getProductById } from '../../../redux/productsRedux';
-import { setCart } from '../../../redux/cartRedux';
+import { getProductById } from '../../../selectors';
+import { setCart } from '../../../actions/cartActions';
 
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';

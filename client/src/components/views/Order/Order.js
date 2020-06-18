@@ -1,13 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './Order.module.scss';
 import { connect } from 'react-redux';
-import { getCartProducts } from '../../../redux/cartRedux';
+import { getCartProducts } from '../../../selectors';
 
 import { CartProducts } from '../../features/CartProducts/CartProducts';
 import { OrderForm } from '../../features/OrderForm/OrderForm';
 
 class Component extends React.Component {
+
+  static propTypes = {
+    cart: PropTypes.object,
+  }
 
   render() {
     const { cart } = this.props;

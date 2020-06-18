@@ -16,7 +16,7 @@ import { Order } from './components/views/Order/Order';
 import { OrderSummary } from './components/views/OrderSummary/OrderSummary';
 
 // store
-import { store } from './redux/store';
+import { store } from './store/store';
 
 const theme = createMuiTheme({
   palette: {
