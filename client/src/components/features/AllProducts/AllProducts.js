@@ -9,7 +9,7 @@ import { getSearchString } from '../../../selectors';
 import { Link } from 'react-router-dom';
 import styles from './AllProducts.module.scss';
 
-import { Search } from '../Search/Search';
+import SearchFeatureContainer from '../../../containers/Features/SearchFeatureContainer';
 
 class Component extends React.Component {
 
@@ -31,7 +31,7 @@ class Component extends React.Component {
       <div className={styles.root}>
         <div className={styles.allProdcutsHeader}>
           <h2>Nasze produkty</h2>
-          <Search />
+          <SearchFeatureContainer />
         </div>
         <div className={styles.wrapper}>
           {productsToDisplay.map(product => (

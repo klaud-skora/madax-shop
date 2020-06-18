@@ -2,15 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Search.module.scss';
 import SearchIcon from '@material-ui/icons/Search';
-import { connect } from 'react-redux';
-import { getSearchString } from '../../../selectors';
-import { createAction_changeSearchString } from '../../../actions/searchStringActions';
 
-class Component extends React.Component {
+class Search extends React.Component {
   static propTypes = {
     searchString: PropTypes.string,
     changeSearchString: PropTypes.func,
-    history: PropTypes.object,
   }
 
   state = {
@@ -40,18 +36,4 @@ class Component extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  searchString: getSearchString(state),
-});
-
-
-const mapDispatchToProps = dispatch => ({
-  changeSearchString: newSearchString => dispatch(createAction_changeSearchString(newSearchString)),
-});
-
-const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
-
-export {
-  Container as Search,
-  Component as SearchComponent,
-};
+export default Search;
