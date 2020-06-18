@@ -4,12 +4,11 @@ import { AllProducts } from '../../features/AllProducts/AllProducts';
 import styles from './Homepage.module.scss';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
-class Component extends React.Component {
+export default class Homepage extends React.Component {
 
   scrollDown() {
 
     const box = document.getElementById('content') != null ? document.getElementById('content') : window;
-
     box.scroll({ top: window.innerHeight * .93, behavior: 'smooth' });
   }
 
@@ -42,7 +41,4 @@ class Component extends React.Component {
     );
   }
 }
-export {
-  Component as Homepage,
-  Component as HomepageComponent,
-};
+

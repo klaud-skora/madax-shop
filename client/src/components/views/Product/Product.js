@@ -3,15 +3,11 @@ import PropTypes from 'prop-types';
 
 import styles from './Product.module.scss';
 
-import { connect } from 'react-redux';
-import { getProductById } from '../../../selectors';
-import { setCart } from '../../../actions/cartActions';
-
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
-class Component extends React.Component {
+class Product extends React.Component {
   static propTypes = {
     product: PropTypes.object,
     addToCart: PropTypes.func,
@@ -51,18 +47,4 @@ class Component extends React.Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
-  product: getProductById(state, props.match.params.id),
-});
-
-const mapDispatchToProps = dispatch => ({
-  addToCart: (product, amount) => dispatch(setCart(product, amount)),
-});
-
-const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
-
-export {
-  // Component as Product,
-  Container as Product,
-  Component as ProductComponent,
-};
+export default Product;
