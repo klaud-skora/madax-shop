@@ -13,7 +13,7 @@ import { Homepage } from './components/views/Home/Homepage';
 import { Product } from './components/views/Product/Product';
 import CartViewContainer from './containers/Views/CartViewContainer';
 import OrderViewContainer from './containers/Views/OrderViewContainer';
-import { OrderSummary } from './components/views/OrderSummary/OrderSummary';
+import OrderSummary from './components/views/OrderSummary/OrderSummary';
 
 // store
 import { store } from './store/store';
