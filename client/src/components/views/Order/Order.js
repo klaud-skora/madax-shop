@@ -6,12 +6,12 @@ import { connect } from 'react-redux';
 import { getCartProducts } from '../../../selectors';
 
 import { CartProducts } from '../../features/CartProducts/CartProducts';
-import { OrderForm } from '../../features/OrderForm/OrderForm';
+import OrderFormFeatureContainer from '../../../containers/Features/OrderFormFeatureContainer';
 
 class Component extends React.Component {
 
   static propTypes = {
-    cart: PropTypes.object,
+    cart: PropTypes.array,
   }
 
   render() {
@@ -24,7 +24,7 @@ class Component extends React.Component {
             <CartProducts />
             <h2> Dane do wysyłki</h2>
           </div>
-          <OrderForm />
+          <OrderFormFeatureContainer />
         </div>
         : <div className={styles.root}>Brak produktów w koszyku.</div>
     );

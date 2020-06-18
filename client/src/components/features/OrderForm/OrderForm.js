@@ -4,11 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './OrderForm.module.scss';
 import Button from '@material-ui/core/Button';
 
-import { connect } from 'react-redux';
-import { getAll } from '../../../selectors';
-import { submitOrder, cleanCart } from '../../../actions/cartActions';
-
-class Component extends React.Component {
+class OrderForm extends React.Component {
 
   static propTypes = {
     cart: PropTypes.array,
@@ -30,7 +26,6 @@ class Component extends React.Component {
   }
 
   updateInput({ target }) {
-    console.log(this.state);
     const { orderer } = this.state;
     const { value, name } = target;
 
@@ -92,19 +87,4 @@ class Component extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  cart: getAll(state),
-});
-
-const mapDispatchToProps = dispatch => ({
-  submitOrder: (cart, orderer) => dispatch(submitOrder(cart, orderer)),
-  cleanCart: () => dispatch(cleanCart()),
-});
-
-const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
-
-export {
-
-  Container as OrderForm,
-  Component as OrderFormComponent,
-};
+export default OrderForm;
