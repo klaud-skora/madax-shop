@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AllProducts } from '../../features/AllProducts/AllProducts';
+import AllProductsFeatureContainer from '../../../containers/Features/AllProductsFeatureContainer';
 import styles from './Homepage.module.scss';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
@@ -36,7 +36,7 @@ export default class Homepage extends React.Component {
           stały na najwyższym poziomie. Przynależność do BNI to niewątpliwie duży zaszczyt i potwierdzenie naszej wiarygodności.
           </p>
         </section>
-        <AllProducts />
+        <AllProductsFeatureContainer />
       </div>
     );
   }

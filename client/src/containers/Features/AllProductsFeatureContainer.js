@@ -8,7 +8,7 @@ import { loadProductsRequest } from '../../actions/productsActions';
 
 function AllProductsFeatureContainer({ allProducts, searchString, loadProducts }) {
   return <AllProducts
-    allProduct={allProducts}
+    allProducts={allProducts}
     searchString={searchString}
     loadProducts={loadProducts}
   />;
