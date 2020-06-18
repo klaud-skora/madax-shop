@@ -5,13 +5,10 @@ import styles from './Cart.module.scss';
 
 import Button from '@material-ui/core/Button';
 
-import { connect } from 'react-redux';
-import { getCartProducts } from '../../../selectors';
-
 import CartProductsFeatureContainer from '../../../containers/Features/CartProductsFeatureContainer';
 import { Link } from 'react-router-dom';
 
-class Component extends React.Component {
+class Cart extends React.Component {
   static propTypes = {
     products: PropTypes.array,
   };
@@ -40,14 +37,5 @@ class Component extends React.Component {
     );
   }
 }
-const mapStateToProps = state => ({
-  products: getCartProducts(state),
-});
 
-const Container = connect(mapStateToProps)(Component);
-
-export {
-  // Component as Cart,
-  Container as Cart,
-  Component as CartComponent,
-};
+export default Cart;
