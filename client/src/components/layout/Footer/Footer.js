@@ -5,7 +5,7 @@ import styles from './Footer.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
-const Component = () => {
+const Footer = () => {
 
   return(
     <div className={styles.root}>
@@ -18,7 +18,4 @@ const Component = () => {
 
 };
 
-export {
-  Component as Footer,
-  Component as FooterComponent,
-};
+export default Footer;

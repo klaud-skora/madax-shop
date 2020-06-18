@@ -6,7 +6,7 @@ import { createMuiTheme, StylesProvider, ThemeProvider } from '@material-ui/core
 import { CssBaseline } from '@material-ui/core';
 
 // import components
-import { MainLayout } from './components/layout/MainLayout/MainLayout';
+import MainLayout from './components/layout/MainLayout/MainLayout';
 
 // import routes
 import { Homepage } from './components/views/Home/Homepage';

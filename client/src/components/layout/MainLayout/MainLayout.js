@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 import styles from './MainLayout.module.scss';
 
-import { Header } from '../Header/Header';
-import { Footer } from '../Footer/Footer';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
-const Component = ({ children }) => {
+const MainLayout = ({ children }) => {
   return(
     <div className={styles.root}>
       <Header />
@@ -18,11 +18,8 @@ const Component = ({ children }) => {
   );
 };
 
-Component.propTypes = {
+MainLayout.propTypes = {
   children: PropTypes.node,
 };
 
-export {
-  Component as MainLayout,
-  Component as MainLayoutComponent,
-};
+export default MainLayout;
