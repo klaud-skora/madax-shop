@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
 import { getCartProducts } from '../../../selectors';
 
-import { CartProducts } from '../../features/CartProducts/CartProducts';
+import CartProductsFeatureContainer from '../../../containers/Features/CartProductsFeatureContainer';
 import { Link } from 'react-router-dom';
 
 class Component extends React.Component {
@@ -28,7 +28,7 @@ class Component extends React.Component {
         <div className={styles.root}>
           <h2>Twój koszyk</h2>
           <div className={styles.cart}>
-            <CartProducts />
+            <CartProductsFeatureContainer />
             <div className={styles.buttonContainer}>
               <Link to={process.env.PUBLIC_URL +'/order'}>
                 <Button className={styles.order}>Zamów</Button>

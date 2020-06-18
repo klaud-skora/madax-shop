@@ -5,8 +5,9 @@ import styles from './Order.module.scss';
 import { connect } from 'react-redux';
 import { getCartProducts } from '../../../selectors';
 
-import { CartProducts } from '../../features/CartProducts/CartProducts';
+
 import OrderFormFeatureContainer from '../../../containers/Features/OrderFormFeatureContainer';
+import CartProductsFeatureContainer from '../../../containers/Features/CartProductsFeatureContainer';
 
 class Component extends React.Component {
 
@@ -21,7 +22,7 @@ class Component extends React.Component {
         <div className={styles.root}>
           <div className={styles.summary}>
             <h2>Zamówienie</h2>
-            <CartProducts />
+            <CartProductsFeatureContainer />
             <h2> Dane do wysyłki</h2>
           </div>
           <OrderFormFeatureContainer />
