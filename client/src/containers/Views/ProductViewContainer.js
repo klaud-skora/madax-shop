@@ -4,23 +4,29 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Product from '../../components/views/Product/Product';
 
-// import { getProductById } from '../../selectors';
 import { setCart } from '../../actions/cartActions';
+import { loadChosedProductRequest } from '../../actions/productsActions';
+import { getChosedProduct } from '../../selectors';
 
-function ProductViewContainer({ addToCart }) {
+function ProductViewContainer({ product, addToCart, loadProduct }) {
   return <Product
+    product={product}
     addToCart={addToCart}
+    loadProduct={loadProduct}
   />;
 }
 ProductViewContainer.propTypes = {
+  product: PropTypes.object,
   addToCart: PropTypes.func,
+  loadProduct: PropTypes.func,
 };
 
 export default connect(
   state => ({
-    // product: getProductById(state, props.match.params.id),
+    product: getChosedProduct(state),
   }),
-  (dispatch) => ({
+  (dispatch, props) => ({
     addToCart: (product, amount) => dispatch(setCart(product, amount)),
+    loadProduct: () => dispatch(loadChosedProductRequest(props.match.params.id)),
   })
 )(ProductViewContainer);

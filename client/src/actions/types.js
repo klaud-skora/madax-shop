@@ -1,5 +1,6 @@
 
-const productsReducerName = 'products';
+export const productsReducerName = 'products';
+export const productReducerName = 'product';
 export const cartReducerName = 'cart';
 export const searchStringReducerName = 'searchString';
 
@@ -9,6 +10,8 @@ export const createActionName = ( reducerName, name ) => `app/${reducerName}/${n
 export const FETCH_START = createActionName(productsReducerName, 'FETCH_START');
 export const FETCH_SUCCESS = createActionName(productsReducerName, 'FETCH_SUCCESS');
 export const FETCH_ERROR = createActionName(productsReducerName, 'FETCH_ERROR');
+
+export const FETCH_PRODUCT = createActionName(productReducerName, 'FETCH_PRODUCT');
 
 /* cart */
 export const FETCH_CART_START = createActionName(cartReducerName, 'FETCH_CART_START');

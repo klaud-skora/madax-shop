@@ -10,4 +10,5 @@ export const initialState = {
     products: [],
   },
   searchString: '',
+  product: {},
 };
