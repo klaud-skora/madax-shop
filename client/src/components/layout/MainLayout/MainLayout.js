@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 
 import styles from './MainLayout.module.scss';
 
+// components
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-const MainLayout = ({ children }) => {
+export default function MainLayout ({ children }) {
   return(
     <div className={styles.root}>
       <Header />
@@ -21,5 +22,3 @@ const MainLayout = ({ children }) => {
 MainLayout.propTypes = {
   children: PropTypes.node,
 };
-
-export default MainLayout;

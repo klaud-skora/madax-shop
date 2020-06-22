@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Search.module.scss';
 import SearchIcon from '@material-ui/icons/Search';
 
-class Search extends React.Component {
+import styles from './Search.module.scss';
+
+export default class Search extends React.Component {
   static propTypes = {
     searchString: PropTypes.string,
     changeSearchString: PropTypes.func,
@@ -35,5 +36,3 @@ class Search extends React.Component {
     );
   }
 }
-
-export default Search;

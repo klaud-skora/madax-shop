@@ -1,12 +1,10 @@
 import React from 'react';
-
-import styles from './Footer.module.scss';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
-const Footer = () => {
+import styles from './Footer.module.scss';
 
+export default function Footer () {
   return(
     <div className={styles.root}>
       <p>Copyright © Madax BHP 2020</p>
@@ -15,7 +13,4 @@ const Footer = () => {
       </a>
     </div>
   );
-
 };
-
-export default Footer;

@@ -1,8 +1,10 @@
 import React from 'react';
-
-import AllProductsFeatureContainer from '../../../containers/Features/AllProductsFeatureContainer';
-import styles from './Homepage.module.scss';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+
+import styles from './Homepage.module.scss';
+
+// components
+import AllProductsFeatureContainer from '../../../containers/Features/AllProductsFeatureContainer';
 
 export default class Homepage extends React.Component {
 

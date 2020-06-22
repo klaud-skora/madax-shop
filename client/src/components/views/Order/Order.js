@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 
 import styles from './Order.module.scss';
 
+// components
 import OrderFormFeatureContainer from '../../../containers/Features/OrderFormFeatureContainer';
 import CartProductsFeatureContainer from '../../../containers/Features/CartProductsFeatureContainer';
 
-const Order = ({ cart }) => {
+export default function Order ({ cart }) {
   return (
     cart.length ?
       <div className={styles.root}>
@@ -23,5 +24,3 @@ const Order = ({ cart }) => {
 Order.propTypes = {
   cart: PropTypes.array,
 };
-
-export default Order;

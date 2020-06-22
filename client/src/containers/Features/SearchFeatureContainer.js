@@ -1,10 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Search from '../../components/features/Search/Search';
 import PropTypes from 'prop-types';
 
-import { getSearchString } from '../../selectors';
+// actions
 import { createAction_changeSearchString } from '../../actions/searchStringActions';
+
+// components
+import Search from '../../components/features/Search/Search';
+
+// selectors
+import { getSearchString } from '../../selectors';
 
 function SearchFeatureContainer({ searchString, changeSearchString }) {
   return <Search

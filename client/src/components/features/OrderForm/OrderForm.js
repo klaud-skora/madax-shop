@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import styles from './OrderForm.module.scss';
 import Button from '@material-ui/core/Button';
 
-class OrderForm extends React.Component {
+import styles from './OrderForm.module.scss';
+
+export default class OrderForm extends React.Component {
 
   static propTypes = {
     cart: PropTypes.array,
@@ -86,5 +86,3 @@ class OrderForm extends React.Component {
     );
   }
 }
-
-export default OrderForm;

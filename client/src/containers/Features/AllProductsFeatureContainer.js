@@ -1,10 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import AllProducts from '../../components/features/AllProducts/AllProducts';
 import PropTypes from 'prop-types';
 
-import { getAll, getSearchString } from '../../selectors';
+// actions
 import { loadProductsRequest } from '../../actions/productsActions';
+
+// components
+import AllProducts from '../../components/features/AllProducts/AllProducts';
+
+
+// selectors
+import { getAll, getSearchString } from '../../selectors';
 
 function AllProductsFeatureContainer({ allProducts, searchString, loadProducts }) {
   return <AllProducts

@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 import styles from './Navigation.module.scss';
 
-const Navigation = ({ cart }) => {
+export default function Navigation ({ cart }) {
   return(
     <div className={styles.root}>
       <nav>
@@ -23,5 +22,3 @@ const Navigation = ({ cart }) => {
 Navigation.propTypes = {
   cart: PropTypes.array,
 };
-
-export default Navigation;

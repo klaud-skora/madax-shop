@@ -2,9 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import CartProducts from '../../components/features/CartProducts/CartProducts';
-import { getCartProducts } from '../../selectors';
+// actions
 import { changeAmount, deleteProduct } from '../../actions/cartActions';
+
+// components
+import CartProducts from '../../components/features/CartProducts/CartProducts';
+
+// selectors
+import { getCartProducts } from '../../selectors';
 
 function CartProductsFeatureContainer({ products, changeAmount, deleteProduct }) {
   return <CartProducts

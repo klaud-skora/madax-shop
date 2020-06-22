@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import styles from './Header.module.scss';
 
+// components
 import NavigationLayoutContainer from '../../../containers/Layout/NavigationLayoutContainer';
 
-const Header = () => {
+export default function Header () {
   return(
     <div className={styles.root}>
       <Link className={styles.companyLogo} to="/">
@@ -14,5 +16,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;

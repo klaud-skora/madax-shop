@@ -1,11 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import PropTypes from 'prop-types';
-import Product from '../../components/views/Product/Product';
 
+// actions
 import { setCart } from '../../actions/cartActions';
 import { loadChosedProductRequest } from '../../actions/productsActions';
+
+// components
+import Product from '../../components/views/Product/Product';
+
+// selectors
 import { getChosedProduct } from '../../selectors';
 
 function ProductViewContainer({ product, addToCart, loadProduct }) {

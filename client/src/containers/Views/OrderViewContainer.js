@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+// components
 import Order from '../../components/views/Order/Order';
+
+// selectors
 import { getCartProducts } from '../../selectors';
 
 function OrderViewContainer({ cart }) {

@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { Link } from 'react-router-dom';
 import styles from './AllProducts.module.scss';
 
+// components
 import SearchFeatureContainer from '../../../containers/Features/SearchFeatureContainer';
 
-const AllProducts = ({ allProducts, searchString, loadProducts }) => {
+export default function AllProducts ({ allProducts, searchString, loadProducts }) {
 
   useEffect(() => {
     loadProducts();
@@ -41,5 +42,3 @@ AllProducts.propTypes = {
   loadProducts: PropTypes.func,
   searchString: PropTypes.string,
 };
-
-export default AllProducts;

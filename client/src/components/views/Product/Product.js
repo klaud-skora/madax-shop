@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import styles from './Product.module.scss';
-
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
-class Product extends React.Component {
+import styles from './Product.module.scss';
+
+export default class Product extends React.Component {
   static propTypes = {
     product: PropTypes.object,
     addToCart: PropTypes.func,
@@ -52,5 +51,3 @@ class Product extends React.Component {
     }
   }
 }
-
-export default Product;

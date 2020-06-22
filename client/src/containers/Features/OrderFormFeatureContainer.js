@@ -1,10 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+// actions
+import { submitOrder, cleanCart } from '../../actions/cartActions';
+
+// components
 import OrderForm from '../../components/features/OrderForm/OrderForm';
 
-import PropTypes from 'prop-types';
+// selectors
 import { getAll } from '../../selectors';
-import { submitOrder, cleanCart } from '../../actions/cartActions';
 
 function OrderFormFeatureContainer({ cart, submitOrder, cleanCart }) {
   return <OrderForm

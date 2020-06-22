@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import styles from './CartProducts.module.scss';
 import DeleteIcon from '@material-ui/icons/Delete';
 import TextField from '@material-ui/core/TextField';
 
-const CartProducts = ({ products, deleteProduct, changeAmount }) => {
+import styles from './CartProducts.module.scss';
 
+export default function CartProducts ({ products, deleteProduct, changeAmount }) {
   return (
     <div className={styles.cart}>
       {products.map(product => (
@@ -35,5 +34,3 @@ CartProducts.propTypes = {
   changeAmount: PropTypes.func,
   deleteProduct: PropTypes.func,
 };
-
-export default CartProducts;
