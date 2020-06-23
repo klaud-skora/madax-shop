@@ -9,9 +9,7 @@ import AllProductsFeatureContainer from '../../../containers/Features/AllProduct
 export default class Homepage extends React.Component {
 
   scrollDown() {
-
-    const box = document.getElementById('content') != null ? document.getElementById('content') : window;
-    box.scroll({ top: window.innerHeight * .93, behavior: 'smooth' });
+    window.scroll({ top: window.innerHeight * .93, behavior: 'smooth' });
   }
 
   render() {

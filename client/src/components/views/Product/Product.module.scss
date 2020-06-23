@@ -5,8 +5,7 @@
 
   .productBox {
     padding: 20px 40px;
-    min-height: calc(100vh - 60px);
-    overflow-y: scroll;
+    min-height: calc(100vh - #{$headerHeight});
     background-color: #fff;
     margin: 40px 0;
     display: flex;
