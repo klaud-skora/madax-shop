@@ -7,19 +7,36 @@ import styles from './Order.module.scss';
 import OrderFormFeatureContainer from '../../../containers/Features/OrderFormFeatureContainer';
 import CartProductsFeatureContainer from '../../../containers/Features/CartProductsFeatureContainer';
 
-export default function Order ({ cart }) {
-  return (
-    cart.length ?
-      <div className={styles.root}>
+export default class Order extends React.Component {
+
+  renderFilledCart() {
+    return (
+      <div className={styles.cart}>
         <div className={styles.summary}>
           <h2>Zamówienie</h2>
-          <CartProductsFeatureContainer />
+            <CartProductsFeatureContainer />
           <h2> Dane do wysyłki</h2>
         </div>
         <OrderFormFeatureContainer />
       </div>
-      : <div className={styles.root}>Brak produktów w koszyku.</div>
-  );
+    );
+  }
+
+  renderEmptyCart() {
+    return <h3>Brak produktów w koszyku</h3>;
+  }
+
+  render() {
+    const { cart } = this.props;
+    return (
+      <div className={styles.root}>
+
+        { cart.length && this.renderFilledCart() }
+        { !cart.length && this.renderEmptyCart() }
+
+      </div>
+    );
+  }
 };
 Order.propTypes = {
   cart: PropTypes.array,
