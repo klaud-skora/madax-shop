@@ -15,8 +15,7 @@ export default class Product extends React.Component {
 
   componentDidMount() {
     const { loadProduct } = this.props;
-    const box = document.getElementById('content') != null ? document.getElementById('content') : window;
-    box.scroll(0,0);
+    window.scroll(0,0);
     loadProduct();
   }
 

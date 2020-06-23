@@ -11,7 +11,7 @@ export default function MainLayout ({ children }) {
   return(
     <div className={styles.root}>
       <Header />
-      <div id="content" className={styles.content}>
+      <div className={styles.content}>
         {children}
         <Footer />
       </div>
